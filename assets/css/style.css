@@ -1,0 +1,323 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro&display=swap';
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@keyframes pisca {
+  to {
+    opacity: 1;
+  }
+}
+.button2 {
+  position: relative;
+  display: inline-block;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  filter: hue-rotate(0deg);
+  border: 2px solid #cad7ff;
+  transition: all 0.1s linear;
+  margin: 5px;
+}
+.button2 a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #172847;
+  background-color: rgba(227, 228, 255, 0.9176470588);
+}
+.button2:hover {
+  border: 1px solid transparent;
+}
+.button2:hover span {
+  position: absolute;
+  display: block;
+}
+.button2:hover span:nth-child(1) {
+  filter: hue-rotate(0deg);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #3a86ff);
+  animation: animate1 1s linear infinite;
+}
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+.button2:hover span:nth-child(2) {
+  filter: hue-rotate(60deg);
+  top: -100%;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #3a86ff);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%;
+  }
+}
+.button2:hover span:nth-child(3) {
+  filter: hue-rotate(120deg);
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(270deg, transparent, #3a86ff);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes animate3 {
+  0% {
+    right: -100%;
+    height: 3px;
+  }
+  50%, 100% {
+    height: 2px;
+    right: 100%;
+  }
+}
+.button2:hover span:nth-child(4) {
+  filter: hue-rotate(300deg);
+  bottom: -100%;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #3a86ff);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
+}
+
+/*
+    Auther: Abdelrhman Said
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  place-items: center;
+  background: linear-gradient(315deg, #ffffff, #d7e1ec);
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #1f87cd;
+  color: #ffffff !important;
+}
+
+.icon a {
+  color: #000;
+}
+
+.icon:hover a {
+  color: rgb(255, 255, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #d4ebff;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html body {
+  min-height: 100%;
+  padding: 120px 0 10px 0;
+}
+html body header {
+  background-color: #d2e6e9;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  border-radius: 10px 10px 100px 100px;
+  position: relative;
+  box-shadow: 0 0 80px 0px #000;
+}
+html body header div:first-child {
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: rgba(49, 73, 85, 0.6980392157) url(../img/background.jpg) top/cover no-repeat;
+  filter: blur(1px);
+}
+html body header div:nth-child(2) {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transform: translate(-50%);
+  border: 8px solid #cbe6ec;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3843137255);
+  background: url(../img/foto-perfil.jpg) center/cover no-repeat;
+}
+html body header h2 {
+  padding: 220px 20px 20px 20px;
+  text-align: center;
+  font: 20pt "Source Code Pro", monospace;
+}
+html body header p {
+  text-align: center;
+  font: 15pt "Roboto", sans-serif;
+  padding: 10px;
+}
+html body header p::after {
+  padding: 0 0 0 5px;
+  font-size: 25px;
+  content: "|";
+  opacity: 0;
+  animation: pisca 0.7s infinite;
+}
+html body header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(235, 235, 235, 0);
+  margin: 10px;
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2470588235));
+  padding: 5px;
+  border-radius: 8px;
+}
+html body header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html body header div:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

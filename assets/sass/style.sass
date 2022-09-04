@@ -12,15 +12,16 @@ html
   @include reuso.flex(flex,center,center)
   body
     min-height: 100%
-    padding: 120px 0 10px 0
     header
+      margin: 20px 0
       background-color: #d2e6e9
       width: 100%
       max-width: 500px
-      height: 500px
       border-radius: 10px 10px 100px 100px
       position: relative
       box-shadow: 0 0 80px 0px #000
+      overflow: hidden
+      padding-bottom: 20px
       div:first-child
         border-radius: 10px 10px 0 0
         position: absolute
@@ -29,23 +30,43 @@ html
         width: 100%
         height: 180px
         background: #314955b2 url(../img/background.jpg) top/cover no-repeat
-        filter: blur(1px)
+        filter: blur(2px)
+        z-index: 9
+        &::before
+          content: ""
+          width: 100%
+          height: 100%
+          background: #ffffff1c
+          z-index: 10
+          display: block
       div:nth-child(2)
+        z-index: 11
         position: absolute
-        top: -100px
-        left: 50%
+        top: 50px
+        left: 10px
         width: 200px
         height: 200px
         border-radius: 50%
-        transform: translate(-50%)
+        //transform: translate(-50%)
         border: 8px solid #cbe6ec
         box-shadow: 0 0 20px 5px #00000062
         background: url(../img/foto-perfil.jpg) center/cover no-repeat
-      h2
-        padding: 220px 20px 20px 20px
-        text-align: center
-        font: 20pt 'Source Code Pro', monospace
+        span
+          position: absolute
+          display: block
+          left: 120%
+          font-size: 25pt
+          text-align: left
+          color: #ffffff
+          text-shadow: 0px 0px 1px #000000, 0px 0px 5px #000000, 0px 0px 10px #000000
+          z-index: 1000
+          filter: drop-shadow(0 0 0 #372952)
+          &::before
+            content: '\003C'
+          &::after
+            content: '\002F \003E'
       p
+        margin-top: 260px
         text-align: center
         font: 15pt 'Roboto', sans-serif
         padding: 10px
@@ -67,5 +88,7 @@ html
           @include reuso.flex(flex,center,center)
       div:last-child
         @include reuso.flex(flex,center,center)
-
-
+        flex-flow: column nowrap
+        > span:first-child
+          padding: 20px 90px 0 90px
+          border-top: 0.5px solid #979797

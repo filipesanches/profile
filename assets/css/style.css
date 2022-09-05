@@ -4,6 +4,19 @@
     opacity: 1;
   }
 }
+@keyframes fade {
+  0% {
+    left: -100px;
+  }
+  30% {
+    left: 200%;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    left: -100px;
+  }
+}
 [data-color],
 [data-color]:hover {
   filter: drop-shadow(0 5px 2px rgba(0, 0, 0, 0.2392156863));
@@ -92,6 +105,21 @@ html body header > div:first-child > div:first-child {
   border: 5px solid #cbe6ec;
   box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3843137255);
   background: url(../img/foto-perfil.jpg) center/cover no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+html body header > div:first-child > div:first-child::after {
+  top: -20px;
+  left: -100px;
+  content: "";
+  width: 50px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1529411765);
+  display: block;
+  position: absolute;
+  transform: skew(-30deg, 0deg);
+  filter: blur(10px);
+  animation: fade 4s ease-out infinite;
 }
 html body header > h2 {
   max-width: 350px;

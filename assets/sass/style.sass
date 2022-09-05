@@ -2,7 +2,6 @@
 @use 'anima'
 @use 'var'
 @import 'https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro&display=swap'
-@import 'buttons'
 @import 'color-buttons'
 *
   margin: 0
@@ -44,6 +43,20 @@ html
           border: 5px solid var.$color-blue-1
           box-shadow: 0 5px 20px 5px var.$color-black-20
           background: url(../img/foto-perfil.jpg) center/cover no-repeat
+          overflow: hidden
+          position: relative
+          &::after
+            top: -20px
+            left: -100px
+            content: ''
+            width: 50px
+            height: 200px
+            background: #ffffff27
+            display: block
+            position: absolute
+            transform: skew(-30deg, 0deg)
+            filter: blur(10px)
+            animation: fade 4s ease-out infinite
       > h2
         max-width: 350px
         padding: 10px

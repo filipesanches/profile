@@ -1,72 +1,67 @@
 @use 'reuso'
 @use 'anima'
+@use 'var'
 @import 'https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro&display=swap'
 @import 'buttons'
+@import 'color-buttons'
 *
   margin: 0
   padding: 0
   box-sizing: border-box
 html
-  background-color: #d4ebff
+  background-color: var.$color-back-html
   min-height: 100%
-  @include reuso.flex(flex,center,center)
   body
+    @include reuso.flex(flex,center,flex-start)
+    width: 100%
     min-height: 100%
     header
-      margin: 20px 0
-      background-color: #d2e6e9
+      max-width: 700px
       width: 100%
-      max-width: 500px
-      border-radius: 10px 10px 100px 100px
-      position: relative
-      box-shadow: 0 0 80px 0px #000
+      border-radius: 0 0 50px 50px
+      box-shadow: 0 5px 80px 0px #00000088
       overflow: hidden
-      padding-bottom: 20px
-      div:first-child
-        border-radius: 10px 10px 0 0
-        position: absolute
-        top: 0
-        left: 0
+      margin-bottom: 50px
+      > div:first-child
         width: 100%
         height: 180px
-        background: #314955b2 url(../img/background.jpg) top/cover no-repeat
-        filter: blur(2px)
-        z-index: 9
-        &::before
-          content: ""
+        background: url(../img/background.jpg) top/cover no-repeat
+        @include reuso.flex(flex,center,center)
+        flex-flow: row wrap
+        position: relative
+        &::after
+          content: ''
           width: 100%
           height: 100%
-          background: #ffffff1c
-          z-index: 10
-          display: block
-      div:nth-child(2)
-        z-index: 11
-        position: absolute
-        top: 50px
-        left: 10px
-        width: 200px
-        height: 200px
-        border-radius: 50%
-        //transform: translate(-50%)
-        border: 8px solid #cbe6ec
-        box-shadow: 0 0 20px 5px #00000062
-        background: url(../img/foto-perfil.jpg) center/cover no-repeat
-        span
+          background: var.$color-white-10
           position: absolute
-          display: block
-          left: 120%
-          font-size: 25pt
-          text-align: left
-          color: #ffffff
-          text-shadow: 0px 0px 1px #000000, 0px 0px 5px #000000, 0px 0px 10px #000000
-          z-index: 1000
-          filter: drop-shadow(0 0 0 #372952)
-          &::before
-            content: '\003C'
-          &::after
-            content: '\002F \003E'
-      p
-        margin-top: 260px
+        > div:first-child
+          z-index: 2
+          margin: 60px 0 20px 0
+          width: 180px
+          height: 180px
+          border-radius: 50%
+          border: 5px solid var.$color-blue-1
+          box-shadow: 0 5px 20px 5px var.$color-black-20
+          background: url(../img/foto-perfil.jpg) center/cover no-repeat
+      > h2
+        max-width: 350px
+        padding: 10px
+        margin: 70px auto 10px auto
+        font: bolder 25pt 'Roboto', sans-serif
+        color: var.$color-blue-2
+        text-align: center
+        border-radius: 0 0 20px 20px
+        box-shadow: 0 10px 3px 0px var.$color-black-10
+        background: var.$color-transparent
+        &::before
+          content: '\003C'
+          padding-right: 10px
+        &::after
+          content: '\002F \003E'
+          padding-left: 10px
+      > p
+        margin-top: 1
         text-align: center
         font: 15pt 'Roboto', sans-serif
         padding: 10px
@@ -78,17 +73,83 @@ html
           animation: pisca .7s infinite
       nav
         @include reuso.flex(flex,center,center)
-        background: #ebebeb00
-        margin: 10px
-        filter: drop-shadow(0 10px 10px #0000003f)
-        padding: 5px
+        margin: 10px 0 0 0
+        padding: 5px 0 0 10px
         border-radius: 8px
         ul
           list-style: none
           @include reuso.flex(flex,center,center)
-      div:last-child
+          li
+            a
+              display: block
+              padding: 10px 20px 5px 20px
+              background: var.$color-blue-2
+              text-decoration: none
+              margin: 0 3px
+              border-radius: 10px 10px 0 0
+      section
+        display: none
+        padding: 0 5px
+        &.d-block
+          display: block
+        >div
+          border-radius: 5px
+          background-color: red
+          padding: 30px 15px
+          max-width: 500px
+          margin: 0 auto
+          box-shadow: 0 8px 10px 0 #00000059
+      //Menu Midia 
+      >div:last-child
         @include reuso.flex(flex,center,center)
         flex-flow: column nowrap
-        > span:first-child
-          padding: 20px 90px 0 90px
-          border-top: 0.5px solid #979797
+        margin: 30px auto
+        ul
+          list-style: none
+          @include reuso.flex(flex,center,center)
+          width: 100%
+          li
+            position: relative
+            font-family: 'Roboto'
+            a
+              text-decoration: none
+              display: block
+              width: 50px
+              height: 50px
+              border-radius: 50%
+              z-index: 200
+              position: relative
+              margin: 2px
+              transition: filter 7s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+              &:hover
+                filter: grayscale(0.5)
+              i
+                position: absolute
+                left: 50%
+                top: 50%
+                transform: translate(-50%,-50%)
+              &:hover + span
+                opacity: 1
+                top: -55px
+                z-index: 10
+              + span
+                position: absolute
+                font-size: 10pt
+                left: 50%
+                transform: translate(-50%)
+                opacity: 0
+                cursor: pointer
+                padding: 5px 10px
+                border-radius: 3px
+                top: 0
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+                z-index: 0
+                &::after
+                  content: ''
+                  width: 10px
+                  height: 10px
+                  position: absolute
+                  top: calc( 100% - 7px )
+                  z-index: -30
+                  left: 50%
+                  transform: translate(-50%) scale(1.1) rotate(45deg)

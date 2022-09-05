@@ -1,236 +1,40 @@
 @import 'https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro&display=swap';
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @keyframes pisca {
   to {
     opacity: 1;
   }
 }
-.button2 {
-  position: relative;
-  display: inline-block;
-  border-radius: 4px;
-  text-decoration: none;
+[data-color],
+[data-color]:hover {
+  filter: drop-shadow(0 5px 2px rgba(0, 0, 0, 0.2392156863));
+  color: #fff;
   text-transform: uppercase;
-  overflow: hidden;
-  filter: hue-rotate(0deg);
-  border: 2px solid #cad7ff;
-  transition: all 0.1s linear;
-  margin: 5px;
-}
-.button2 a {
-  display: block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #172847;
-  background-color: rgba(227, 228, 255, 0.9176470588);
-}
-.button2:hover {
-  border: 1px solid transparent;
-}
-.button2:hover span {
-  position: absolute;
-  display: block;
-}
-.button2:hover span:nth-child(1) {
-  filter: hue-rotate(0deg);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #3a86ff);
-  animation: animate1 1s linear infinite;
-}
-@keyframes animate1 {
-  0% {
-    left: -100%;
-  }
-  50%, 100% {
-    left: 100%;
-  }
-}
-.button2:hover span:nth-child(2) {
-  filter: hue-rotate(60deg);
-  top: -100%;
-  right: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #3a86ff);
-  animation: animate2 1s linear infinite;
-  animation-delay: 0.25s;
-}
-@keyframes animate2 {
-  0% {
-    top: -100%;
-  }
-  50%, 100% {
-    top: 100%;
-  }
-}
-.button2:hover span:nth-child(3) {
-  filter: hue-rotate(120deg);
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  background: linear-gradient(270deg, transparent, #3a86ff);
-  animation: animate3 1s linear infinite;
-  animation-delay: 0.5s;
-}
-@keyframes animate3 {
-  0% {
-    right: -100%;
-    height: 3px;
-  }
-  50%, 100% {
-    height: 2px;
-    right: 100%;
-  }
-}
-.button2:hover span:nth-child(4) {
-  filter: hue-rotate(300deg);
-  bottom: -100%;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #3a86ff);
-  animation: animate4 1s linear infinite;
-  animation-delay: 0.75s;
-}
-@keyframes animate4 {
-  0% {
-    bottom: -100%;
-  }
-  50%, 100% {
-    bottom: 100%;
-  }
 }
 
-/*
-    Auther: Abdelrhman Said
-*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+[data-color=linkedin],
+[data-color=linkedin]::after {
+  background: #0a66c2;
 }
 
-*:focus,
-*:active {
-  outline: none !important;
-  -webkit-tap-highlight-color: transparent;
+[data-color=instagram],
+[data-color=instagram]::after {
+  background: #a03895;
 }
 
-html,
-body {
-  display: grid;
-  height: 100%;
-  width: 100%;
-  font-family: "Poppins", sans-serif;
-  place-items: center;
-  background: linear-gradient(315deg, #ffffff, #d7e1ec);
+[data-color=gmail],
+[data-color=gmail]::after {
+  background: #2d9248;
 }
 
-.wrapper {
-  display: inline-flex;
-  list-style: none;
+[data-color=github],
+[data-color=github]::after {
+  background: #1f1f1f;
 }
 
-.wrapper .icon {
-  position: relative;
-  background: #ffffff;
-  border-radius: 50%;
-  padding: 15px;
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip {
-  position: absolute;
-  top: 0;
-  font-size: 14px;
-  background: #ffffff;
-  color: #ffffff;
-  padding: 5px 8px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip::before {
-  position: absolute;
-  content: "";
-  height: 8px;
-  width: 8px;
-  background: #ffffff;
-  bottom: -3px;
-  left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .icon:hover .tooltip {
-  top: -45px;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip::before {
-  background: #1877F2;
-  color: #ffffff;
-}
-
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
-  background: #1DA1F2;
-  color: #ffffff;
-}
-
-.wrapper .instagram:hover,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip::before {
-  background: #E4405F;
-  color: #ffffff;
-}
-
-.wrapper .github:hover,
-.wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip::before {
-  background: #333333;
-  color: #ffffff;
-}
-
-.wrapper .linkedin:hover,
-.wrapper .linkedin:hover .tooltip,
-.wrapper .linkedin:hover .tooltip::before {
-  background: #1f87cd;
-  color: #ffffff !important;
-}
-
-.icon a {
-  color: #000;
-}
-
-.icon:hover a {
-  color: rgb(255, 255, 255);
+.active {
+  border-radius: 10px 10px 0 0;
+  background: red;
+  color: #fff;
 }
 
 * {
@@ -242,79 +46,75 @@ body {
 html {
   background-color: #d4ebff;
   min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 html body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
   min-height: 100%;
 }
 html body header {
-  margin: 20px 0;
-  background-color: #d2e6e9;
+  max-width: 700px;
   width: 100%;
-  max-width: 500px;
-  border-radius: 10px 10px 100px 100px;
-  position: relative;
-  box-shadow: 0 0 80px 0px #000;
+  border-radius: 0 0 50px 50px;
+  box-shadow: 0 5px 80px 0px rgba(0, 0, 0, 0.5333333333);
   overflow: hidden;
-  padding-bottom: 20px;
+  margin-bottom: 50px;
 }
-html body header div:first-child {
-  border-radius: 10px 10px 0 0;
-  position: absolute;
-  top: 0;
-  left: 0;
+html body header > div:first-child {
   width: 100%;
   height: 180px;
-  background: rgba(49, 73, 85, 0.6980392157) url(../img/background.jpg) top/cover no-repeat;
-  filter: blur(2px);
-  z-index: 9;
+  background: url(../img/background.jpg) top/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  position: relative;
 }
-html body header div:first-child::before {
+html body header > div:first-child::after {
   content: "";
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1098039216);
-  z-index: 10;
-  display: block;
-}
-html body header div:nth-child(2) {
-  z-index: 11;
+  background: rgba(255, 255, 255, 0.1019607843);
   position: absolute;
-  top: 50px;
-  left: 10px;
-  width: 200px;
-  height: 200px;
+}
+html body header > div:first-child > div:first-child {
+  z-index: 2;
+  margin: 60px 0 20px 0;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  border: 8px solid #cbe6ec;
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3843137255);
+  border: 5px solid #cbe6ec;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3843137255);
   background: url(../img/foto-perfil.jpg) center/cover no-repeat;
 }
-html body header div:nth-child(2) span {
-  position: absolute;
-  display: block;
-  left: 120%;
-  font-size: 25pt;
-  text-align: left;
-  color: #ffffff;
-  text-shadow: 0px 0px 1px #000000, 0px 0px 5px #000000, 0px 0px 10px #000000;
-  z-index: 1000;
-  filter: drop-shadow(0 0 0 #372952);
+html body header > h2 {
+  max-width: 350px;
+  padding: 10px;
+  margin: 70px auto 10px auto;
+  font: bolder 25pt "Roboto", sans-serif;
+  color: #a5c7e7;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 10px 3px 0px rgba(0, 0, 0, 0.0352941176);
+  background: transparent;
 }
-html body header div:nth-child(2) span::before {
+html body header > h2::before {
   content: "<";
+  padding-right: 10px;
 }
-html body header div:nth-child(2) span::after {
+html body header > h2::after {
   content: "/>";
+  padding-left: 10px;
 }
-html body header p {
-  margin-top: 260px;
+html body header > p {
+  margin-top: 1;
   text-align: center;
   font: 15pt "Roboto", sans-serif;
   padding: 10px;
 }
-html body header p::after {
+html body header > p::after {
   padding: 0 0 0 5px;
   font-size: 25px;
   content: "|";
@@ -325,10 +125,8 @@ html body header nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(235, 235, 235, 0);
-  margin: 10px;
-  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2470588235));
-  padding: 5px;
+  margin: 10px 0 0 0;
+  padding: 5px 0 0 10px;
   border-radius: 8px;
 }
 html body header nav ul {
@@ -337,15 +135,94 @@ html body header nav ul {
   justify-content: center;
   align-items: center;
 }
-html body header div:last-child {
+html body header nav ul li a {
+  display: block;
+  padding: 10px 20px 5px 20px;
+  background: #a5c7e7;
+  text-decoration: none;
+  margin: 0 3px;
+  border-radius: 10px 10px 0 0;
+}
+html body header section {
+  display: none;
+  padding: 0 5px;
+}
+html body header section.d-block {
+  display: block;
+}
+html body header section > div {
+  border-radius: 5px;
+  background-color: red;
+  padding: 30px 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3490196078);
+}
+html body header > div:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
+  margin: 30px auto;
 }
-html body header div:last-child > span:first-child {
-  padding: 20px 90px 0 90px;
-  border-top: 0.5px solid #979797;
+html body header > div:last-child ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+html body header > div:last-child ul li {
+  position: relative;
+  font-family: "Roboto";
+}
+html body header > div:last-child ul li a {
+  text-decoration: none;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 200;
+  position: relative;
+  margin: 2px;
+  transition: filter 7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+html body header > div:last-child ul li a:hover {
+  filter: grayscale(0.5);
+}
+html body header > div:last-child ul li a i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+html body header > div:last-child ul li a:hover + span {
+  opacity: 1;
+  top: -55px;
+  z-index: 10;
+}
+html body header > div:last-child ul li a + span {
+  position: absolute;
+  font-size: 10pt;
+  left: 50%;
+  transform: translate(-50%);
+  opacity: 0;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 3px;
+  top: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 0;
+}
+html body header > div:last-child ul li a + span::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: calc(100% - 7px);
+  z-index: -30;
+  left: 50%;
+  transform: translate(-50%) scale(1.1) rotate(45deg);
 }
 
 /*# sourceMappingURL=style.css.map */

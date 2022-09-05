@@ -1,7 +1,4 @@
 const texto = document.querySelector("p");
-const texto1 = document.querySelector("div:nth-child(2) span");
-
-
 function maquinaDeEscrever(texto) {
   const txtArray = texto.innerText.split("");
   texto.innerHTML = "";
@@ -10,4 +7,18 @@ function maquinaDeEscrever(texto) {
   });
 }
 maquinaDeEscrever(texto);
-maquinaDeEscrever(texto1);
+
+
+function openTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.querySelectorAll("section");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.querySelectorAll(".tab");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}

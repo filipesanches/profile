@@ -15,45 +15,65 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body>
+  <body>   
     <header>
-      <div></div>
       <div>
-        <span>Filipe Sanches</span>
+        <div></div>
       </div>
+      <h2  data-title="Filipe Sanches">Filipe Sanches</h2>
       <p>Analista Desenvolvedor Pleno</p>
       <nav>
         <ul>
           <li>
-            <button class="button2">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <a href="#">Home</a>
-            </button>
+            <a href="#" class="tab active" onclick="openTab(event, 'home')">Home</a>
           </li>
           <li>
-            <button class="button2">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <a href="#">Skill</a>
-            </button>
+            <a href="#" class="tab" onclick="openTab(event, 'skill')">Skill</a>
           </li>
           <li>
-            <button class="button2">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <a href="#">Projects</a>
-            </button>
+            <a href="#" class="tab" onclick="openTab(event, 'projects')">Projects</a>
           </li>
         </ul>
       </nav>
+      <section id="home" class="d-block">
+        <div>
+          <h2>Home</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facilis quae veritatis animi tempore voluptatibus fugit illum a officiis necessitatibus sunt asperiores amet nemo earum eum recusandae atque, quis dolore?</p>
+        </div>
+      </section>
+      <section id="skill">
+        <div>
+          <h2>Skill</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facilis quae veritatis animi tempore voluptatibus fugit illum a officiis necessitatibus sunt asperiores amet nemo earum eum recusandae atque, quis dolore?</p>
+        </div>
+      </section>
+      <section id="projects">
+        <div>
+          <h2>Projects</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facilis quae veritatis animi tempore voluptatibus fugit illum a officiis necessitatibus sunt asperiores amet nemo earum eum recusandae atque, quis dolore?</p>
+        </div>
+      </section>
       <div>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/filipe-sanches-pereira-2baa23201/" data-color="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <span data-color="linkedin">Linkedin</span>
+          </li>
+          <li>
+            <a href="#" data-color="github" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <span data-color="github">github</span>
+          </li>
+          <li>
+            <a href="#" data-color="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <span data-color="instagram">Instagram</span>
+          </li>
+          <li>
+            <a href="#" data-color="gmail" target="_blank"><i class="fa-regular fa-at"></i></a>
+            <span data-color="gmail">gmail</span>
+          </li>
+        </ul>
+      </div>
+      <!--<div>
         <span>Mídias sociais</span>
         <ul class="wrapper">
           <li class="icon facebook">
@@ -80,7 +100,7 @@
             </a>
           </li>
         </ul>
-      </div>
+      </div>-->
     </header>
     <script src="./assets/js/main.js"></script>
   </body>

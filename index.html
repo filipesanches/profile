@@ -15,40 +15,41 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body>   
-    <header>
+  <body>
+    <div class="conteudo-anima"></div>   
+    <header class="glass">
       <div>
         <div></div>
       </div>
-      <h2  data-title="Filipe Sanches">Filipe Sanches</h2>
+      <h2>Filipe Sanches</h2>
       <p>Analista Desenvolvedor Pleno</p>
       <nav>
         <ul>
           <li>
-            <a href="#" class="tab active" onclick="openTab(event, 'home')">Home</a>
+            <a href="javascript:void(0)" class="tab active" onclick="openTab(event, 'home')">Home</a>
           </li>
           <li>
-            <a href="#" class="tab" onclick="openTab(event, 'skill')">Skill</a>
+            <a href="javascript:void(0)" class="tab" onclick="openTab(event, 'skill')">Skill</a>
           </li>
           <li>
-            <a href="#" class="tab" onclick="openTab(event, 'projects')">Projects</a>
+            <a href="javascript:void(0)" class="tab" onclick="openTab(event, 'projects')">Projects</a>
           </li>
         </ul>
       </nav>
       <section id="home" class="d-block">
-        <div>
+        <div class="glass">
           <h2>Home</h2>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facilis quae veritatis animi tempore voluptatibus fugit illum a officiis necessitatibus sunt asperiores amet nemo earum eum recusandae atque, quis dolore?</p>
         </div>
       </section>
       <section id="skill">
-        <div>
+        <div class="glass">
           <h2>Skill</h2>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facilis quae veritatis animi tempore voluptatibus fugit illum a officiis necessitatibus sunt asperiores amet nemo earum eum recusandae atque, quis dolore?</p>
         </div>
       </section>
       <section id="projects">
-        <div>
+        <div class="glass">
           <h2>Projects</h2>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facilis quae veritatis animi tempore voluptatibus fugit illum a officiis necessitatibus sunt asperiores amet nemo earum eum recusandae atque, quis dolore?</p>
         </div>
@@ -67,41 +68,10 @@
             <a href="#" data-color="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <span data-color="instagram">Instagram</span>
           </li>
-          <li>
-            <a href="#" data-color="gmail" target="_blank"><i class="fa-regular fa-at"></i></a>
-            <span data-color="gmail">gmail</span>
-          </li>
         </ul>
       </div>
-      <!--<div>
-        <span>Mídias sociais</span>
-        <ul class="wrapper">
-          <li class="icon facebook">
-            <span class="tooltip">Facebook</span>
-            <span><i class="fab fa-facebook-f"></i></span>
-          </li>
-          <li class="icon instagram">
-            <span class="tooltip">Instagram</span>
-            <span><i class="fab fa-instagram"></i></span>
-          </li>
-          <li class="icon github">
-            <span class="tooltip">Github</span>
-            <a href="https://github.com/filipesanches" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-          </li>
-          <li class="icon linkedin">
-            <span class="tooltip">Linkedin</span>
-            <a
-              href="https://www.linkedin.com/in/filipe-sanches-pereira-2baa23201/"
-              target="_blank"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </li>
-        </ul>
-      </div>-->
     </header>
+    <script src="./assets/js/anime.min.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

@@ -7,20 +7,41 @@
   margin: 0
   padding: 0
   box-sizing: border-box
+  font-family: 'Roboto', sans-serif
 html
-  background-color: var.$color-back-html
+  background: rgb(0,123,255)
+  background: linear-gradient(40deg, #125eb0e0 0%, #7e3aa6bb 40%, #4949b0c4 100%) fixed
   min-height: 100%
+  height: 100%
   body
     @include reuso.flex(flex,center,flex-start)
     width: 100%
+    max-width: 100%
     min-height: 100%
+    position: relative
+    .conteudo-anima
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      overflow: hidden
+      .block
+        opacity: 0.4
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 100px
+        height: 100px
+        background: #826ce46c
+        box-shadow: 2px 2px 7px #00000027
     header
       max-width: 700px
       width: 100%
       border-radius: 0 0 50px 50px
-      box-shadow: 0 5px 80px 0px #00000088
       overflow: hidden
       margin-bottom: 50px
+      border-radius: 0 0 10px 10px !important
       > div:first-child
         width: 100%
         height: 180px
@@ -58,15 +79,14 @@ html
             filter: blur(10px)
             animation: fade 4s ease-out infinite
       > h2
-        max-width: 350px
-        padding: 10px
-        margin: 70px auto 10px auto
-        font: bolder 25pt 'Roboto', sans-serif
-        color: var.$color-blue-2
         text-align: center
-        border-radius: 0 0 20px 20px
-        box-shadow: 0 10px 3px 0px var.$color-black-10
-        background: var.$color-transparent
+        stroke: black
+        font-size: 40px
+        margin-top: 80px
+        background: rgba(18,94,176,1)
+        background: linear-gradient(40deg, #290050fa 0%, #965bb8 80%, #ffffff 100%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
         &::before
           content: '\003C'
           padding-right: 10px
@@ -76,7 +96,8 @@ html
       > p
         margin-top: 1
         text-align: center
-        font: 15pt 'Roboto', sans-serif
+        font-size: 15pt
+        color: var.$color-white
         padding: 10px
         &::after
           padding: 0 0 0 5px
@@ -86,35 +107,49 @@ html
           animation: pisca .7s infinite
       nav
         @include reuso.flex(flex,center,center)
-        margin: 10px 0 0 0
-        padding: 5px 0 0 10px
         border-radius: 8px
+        margin-top: 30px
         ul
           list-style: none
           @include reuso.flex(flex,center,center)
           li
             a
-              background: #ccc
+              background: #ffffff33
               font: 15px 'Roboto'
               display: block
               padding: 10px 20px 5px 20px
-              color: #000
+              color: #ffffff
               text-decoration: none
               margin: 0 3px
               border-radius: 10px 10px 0 0
+              position: relative
+              overflow: hidden
+              &:hover
+                color: var.$color-white
+              &::after
+                content: ''
+                opacity: 0
+                transition: .5s
+                left: 0
+                top: 0
+                z-index: -1
+                width: 0
+                background: rgb(18,94,176)
+                background: linear-gradient(90deg, rgba(18,94,176,1) 0%, rgba(124,0,255,1) 100%)
+              &:hover::after
+                position: absolute
+                width: 100%
+                height: 50px
+                opacity: 0.5
       section
         display: none
         padding: 0 5px
         &.d-block
           display: block
         >div
-          border-radius: 5px
-          background-color: #8ea6bd
           padding: 30px 15px
           max-width: 500px
           margin: 0 auto
-          box-shadow: 0 8px 10px 0 #00000059
-          font: 12pt 'Roboto'
           h2
             padding: 10px 0
       //Menu Midia 

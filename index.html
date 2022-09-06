@@ -29,7 +29,7 @@
             <a href="javascript:void(0)" class="tab active" onclick="openTab(event, 'home')">Home</a>
           </li>
           <li>
-            <a href="javascript:void(0)" class="tab" onclick="openTab(event, 'skill')">Skill</a>
+            <a href="javascript:void(0)" class="tab" onclick="openTab(event, 'skill'); progressBar()">Skill</a>
           </li>
           <li>
             <a href="javascript:void(0)" class="tab" onclick="openTab(event, 'projects')">Projects</a>
@@ -44,8 +44,12 @@
       </section>
       <section id="skill">
         <div class="glass">
-          <h2>Skill</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facilis quae veritatis animi tempore voluptatibus fugit illum a officiis necessitatibus sunt asperiores amet nemo earum eum recusandae atque, quis dolore?</p>
+          <div class="container">
+            <div class="circular-progress" style="background: conic-gradient(#dd4b25 360deg, rgb(202, 220, 255) 360deg);">
+              <div class="value-container"></div>
+              <span><i class="fa-brands fa-html5"></i></span>
+            </div>
+          </div>
         </div>
       </section>
       <section id="projects">

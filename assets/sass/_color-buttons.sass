@@ -21,9 +21,45 @@
   -webkit-backdrop-filter: blur( 1.5px )
   border-radius: 10px 10px 0 0
   color: #000
+  &::before
+    content: '\2731'
+    padding: 0 5px 0 0
 .glass
   background: rgba( 255, 255, 255, 0.2 )
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
   backdrop-filter: blur( 1.5px )
   -webkit-backdrop-filter: blur( 1.5px )
   border-radius: 10px
+
+.container
+  display: flex
+.circular-progress
+  position: relative
+  height: 100px
+  width: 100px
+  border-radius: 50%
+  display: grid
+  align-content: center
+  place-items: center
+  span
+    position: absolute
+    top: 15px
+    z-index: 5
+    font: 30pt 'Source Code Pro'
+    color: #fff
+
+.circular-progress:before
+  content: ""
+  position: absolute
+  height: 84%
+  width: 84%
+  background-color: #e27968
+  border-radius: 50%
+
+.value-container 
+  position: absolute
+  font-weight: bolder
+  font-size: 15px
+  top: 60px
+  color: #fff
+

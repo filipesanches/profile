@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import 'https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro&display=swap';
 @keyframes pisca {
   to {
@@ -51,6 +52,10 @@
   border-radius: 10px 10px 0 0;
   color: #000;
 }
+.active::before {
+  content: "✱";
+  padding: 0 5px 0 0;
+}
 
 .glass {
   background: rgba(255, 255, 255, 0.2);
@@ -58,6 +63,44 @@
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
   border-radius: 10px;
+}
+
+.container {
+  display: flex;
+}
+
+.circular-progress {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: grid;
+  align-content: center;
+  place-items: center;
+}
+.circular-progress span {
+  position: absolute;
+  top: 15px;
+  z-index: 5;
+  font: 30pt "Source Code Pro";
+  color: #fff;
+}
+
+.circular-progress:before {
+  content: "";
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  background-color: #e27968;
+  border-radius: 50%;
+}
+
+.value-container {
+  position: absolute;
+  font-weight: bolder;
+  font-size: 15px;
+  top: 60px;
+  color: #fff;
 }
 
 * {
@@ -156,7 +199,7 @@ html body header > h2 {
   font-size: 40px;
   margin-top: 80px;
   background: rgb(18, 94, 176);
-  background: linear-gradient(40deg, rgba(41, 0, 80, 0.9803921569) 0%, #965bb8 80%, #ffffff 100%);
+  background: linear-gradient(40deg, rgba(41, 0, 80, 0.9803921569) 0%, #965bb8 90%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -171,7 +214,7 @@ html body header > h2::after {
 html body header > p {
   margin-top: 1;
   text-align: center;
-  font-size: 15pt;
+  font-size: 16pt;
   color: #fff;
   padding: 10px;
 }

@@ -1,25 +1,27 @@
 //Anima Background
-const conteudo = document.querySelector('.conteudo-anima')
-function AnimaBg(tag){
-  for(let i = 0; i <= 50; i++){
-    const blocks = document.createElement('div');
-    blocks.classList.add('block')
-    tag.appendChild(blocks)
+const conteudo = document.querySelector(".conteudo-anima");
+function AnimaBg(tag) {
+  for (let i = 0; i <= 50; i++) {
+    const blocks = document.createElement("div");
+    blocks.classList.add("block");
+    tag.appendChild(blocks);
   }
 }
-AnimaBg(conteudo)
-function animateBlocks(){
+AnimaBg(conteudo);
+function animateBlocks() {
   anime({
-  targets: '.block',
-  translateX: () => anime.random(-700,700),
-  translateY: () => anime.random(-700,700),
-  scale: () => anime.random(1,5),
+    targets: ".block",
+    translateX: () => anime.random(-700, 700),
+    translateY: () => anime.random(-700, 700),
+    scale: () => anime.random(1, 5),
 
-  easing: 'linear',
-  duration: 4000
-});
+    easing: "linear",
+    duration: 4000,
+    //delay: anime.stagger(1000)
+  });
 }
-animateBlocks()
+animateBlocks();
+setInterval(animateBlocks, 7000);
 
 //Efeito Maquina de Escrver
 const texto = document.querySelector("p");
@@ -57,4 +59,25 @@ function openTab(evt, idName) {
   //   document.querySelector(`#${idName} div`).style.background = '#6665aa';
   //   document.querySelector(`.active`).style.background = '#27273d';
   // }
+}
+
+function progressBar() {
+  let progressBar = document.querySelector(".circular-progress");
+  let valueContainer = document.querySelector(".value-container");
+
+  let progressValue = 0;
+  let progressEndValue = 100;
+  let speed = 50;
+
+  let progress = setInterval(() => {
+    progressValue++;
+    valueContainer.textContent = `${progressValue}%`;
+    progressBar.style.background = `conic-gradient(
+      #dd4b25 ${progressValue * 3.6}deg,
+      #cadcff ${progressValue * 3.6}deg
+  )`;
+    if (progressValue == progressEndValue) {
+      clearInterval(progress);
+    }
+  }, speed);
 }

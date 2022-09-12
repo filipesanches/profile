@@ -16,7 +16,7 @@
     />
   </head>
   <body>
-    <div class="conteudo-anima"></div>   
+    <div class="conteudo-anima"></div>
     <header class="glass">
       <div>
         <div></div>
@@ -26,28 +26,56 @@
       <nav>
         <ul>
           <li>
-            <a href="javascript:void(0)" class="tab active" onclick="openTab(event, 'home')">Home</a>
+            <a
+              href="javascript:void(0)"
+              class="tab active"
+              onclick="openTab(event, 'home')"
+              >Home</a
+            >
           </li>
           <li>
-            <a href="javascript:void(0)" class="tab" onclick="openTab(event, 'skill'); progressBar()">Skill</a>
+            <a
+              href="javascript:void(0)"
+              class="tab"
+              onclick="openTab(event, 'skill')"
+              >Skill</a
+            >
           </li>
           <li>
-            <a href="javascript:void(0)" class="tab" onclick="openTab(event, 'projects')">Projects</a>
+            <a
+              href="javascript:void(0)"
+              class="tab"
+              onclick="openTab(event, 'projects')"
+              >Projects</a
+            >
           </li>
         </ul>
       </nav>
       <section id="home" class="d-block">
         <div class="glass">
           <h2>Home</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facilis quae veritatis animi tempore voluptatibus fugit illum a officiis necessitatibus sunt asperiores amet nemo earum eum recusandae atque, quis dolore?</p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+            facilis quae veritatis animi tempore voluptatibus fugit illum a
+            officiis necessitatibus sunt asperiores amet nemo earum eum
+            recusandae atque, quis dolore?
+          </p>
         </div>
       </section>
       <section id="skill">
         <div class="glass">
-          <div class="container">
-            <div class="circular-progress" style="background: conic-gradient(#dd4b25 360deg, rgb(202, 220, 255) 360deg);">
-              <div class="value-container"></div>
-              <span><i class="fa-brands fa-html5"></i></span>
+          <div data-content="content-skill">
+            <!--Javascript Contente-->
+          </div>
+          <div class="others">
+            <strong>Outras</strong>
+            <div class="glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg"/>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"/>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"/>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" />
+          
             </div>
           </div>
         </div>
@@ -55,21 +83,35 @@
       <section id="projects">
         <div class="glass">
           <h2>Projects</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facilis quae veritatis animi tempore voluptatibus fugit illum a officiis necessitatibus sunt asperiores amet nemo earum eum recusandae atque, quis dolore?</p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+            facilis quae veritatis animi tempore voluptatibus fugit illum a
+            officiis necessitatibus sunt asperiores amet nemo earum eum
+            recusandae atque, quis dolore?
+          </p>
         </div>
       </section>
       <div>
         <ul>
           <li>
-            <a href="https://www.linkedin.com/in/filipe-sanches-pereira-2baa23201/" data-color="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a
+              href="https://www.linkedin.com/in/filipe-sanches-pereira-2baa23201/"
+              data-color="linkedin"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
             <span data-color="linkedin">Linkedin</span>
           </li>
           <li>
-            <a href="#" data-color="github" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" data-color="github" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
             <span data-color="github">github</span>
           </li>
           <li>
-            <a href="#" data-color="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" data-color="instagram" target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
             <span data-color="instagram">Instagram</span>
           </li>
         </ul>

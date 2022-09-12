@@ -65,44 +65,81 @@
   border-radius: 10px;
 }
 
-.container {
-  display: flex;
+[data-content=content-skill] strong, .others strong {
+  text-align: center;
+  display: block;
+  padding: 10px 10px 5px 10px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3215686275) 0%, transparent 30%);
+  color: #ffffff;
+  border-radius: 5px;
+  text-shadow: 1px 1px 1px #000;
+  margin-top: 15px;
 }
 
-.circular-progress {
+.tab-skill {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2117647059);
+  overflow: hidden;
+  border-radius: 10px;
+  height: 30px;
+  border: 2px solid #ececec;
   position: relative;
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  display: grid;
-  align-content: center;
-  place-items: center;
 }
-.circular-progress span {
+
+.tab-skill-percent {
+  width: 0%;
+  height: 100%;
+  text-align: right;
+  font: bolder 10pt/20pt "roboto";
+  padding-right: 10px;
   position: absolute;
-  top: 15px;
-  z-index: 5;
-  font: 30pt "Source Code Pro";
   color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  top: 0;
+  left: 0;
+  animation: listras-anim 2s linear infinite;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.295) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
 }
 
-.circular-progress:before {
-  content: "";
-  position: absolute;
-  height: 84%;
-  width: 84%;
-  background-color: #e27968;
-  border-radius: 50%;
+.html {
+  background-color: #ff5107;
 }
 
-.value-container {
-  position: absolute;
-  font-weight: bolder;
-  font-size: 15px;
-  top: 60px;
-  color: #fff;
+.css {
+  background-color: #0170ba;
 }
 
+.sass {
+  background-color: #c26191;
+}
+
+.javascript {
+  background-color: #ead41c;
+}
+
+.others div {
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.others div img {
+  padding: 10px;
+  width: 80px;
+  filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.9843137255));
+}
+
+@keyframes listras-anim {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -144,7 +181,7 @@ html body .conteudo-anima .block {
   box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1529411765);
 }
 html body header {
-  max-width: 700px;
+  max-width: 900px;
   width: 100%;
   border-radius: 0 0 50px 50px;
   overflow: hidden;
@@ -279,7 +316,7 @@ html body header section.d-block {
 }
 html body header section > div {
   padding: 30px 15px;
-  max-width: 500px;
+  max-width: 800px;
   margin: 0 auto;
 }
 html body header section > div h2 {

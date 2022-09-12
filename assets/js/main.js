@@ -47,6 +47,7 @@ function openTab(evt, idName) {
   }
   document.getElementById(idName).style.display = "block";
   evt.currentTarget.className += " active";
+
   // if(idName == 'home'){
   //   document.querySelector(`#${idName} div`).style.background = '#8ea6bd';
   //   document.querySelector(`.active`).style.background = '#6589aa';
@@ -60,24 +61,41 @@ function openTab(evt, idName) {
   //   document.querySelector(`.active`).style.background = '#27273d';
   // }
 }
+const dataContent = document.querySelector('[data-content="content-skill"]');
+const button = document.querySelectorAll(".tab");
 
-function progressBar() {
-  let progressBar = document.querySelector(".circular-progress");
-  let valueContainer = document.querySelector(".value-container");
+function createBars(classe, percent){
+  const strong = document.createElement('strong')
+  strong.innerHTML = classe.toString().toUpperCase()
+  const div = document.createElement('div')
+  div.classList.add('tab-skill')
+  const div1 = document.createElement('div')
+  div1.classList.add('tab-skill-percent',classe)
+  div1.innerText = percent
+  div.appendChild(div1)
+  dataContent.appendChild(div)
+  div.before(strong)
+}
+createBars('html','95%')
+createBars('css','90%')
+createBars('sass','75%')
+createBars('javascript','88%')
 
-  let progressValue = 0;
-  let progressEndValue = 100;
-  let speed = 50;
 
-  let progress = setInterval(() => {
-    progressValue++;
-    valueContainer.textContent = `${progressValue}%`;
-    progressBar.style.background = `conic-gradient(
-      #dd4b25 ${progressValue * 3.6}deg,
-      #cadcff ${progressValue * 3.6}deg
-  )`;
-    if (progressValue == progressEndValue) {
-      clearInterval(progress);
-    }
-  }, speed);
+const tabSkills = document.querySelectorAll(".tab-skill-percent");
+button[1].addEventListener("click", () => {
+  for (const i of tabSkills) {
+    i.style.width = 0;
+    animaSkill(i, i.innerText);
+  }
+});
+function animaSkill(classe, percent) {
+  anime({
+    targets: classe,
+    width: percent, // -> from '28px' to '100%',
+    easing: "easeOutCubic",
+    innerHTML: [0, percent],
+    round: 1,
+    duration: 3700,
+  });
 }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* efeitos de animação */
+      @-webkit-keyframes listras-anim {
+        from {
+          background-position: 40px 0;
+        }
+        to {
+          background-position: 0 0;
+        }
+      }
+      @-moz-keyframes listras-anim {
+        from {
+          background-position: 40px 0;
+        }
+        to {
+          background-position: 0 0;
+        }
+      }
+      @-o-keyframes listras-anim {
+        from {
+          background-position: 40px 0;
+        }
+        to {
+          background-position: 0 0;
+        }
+      }
+      @keyframes listras-anim {
+        from {
+          background-position: 40px 0;
+        }
+        to {
+          background-position: 0 0;
+        }
+      }
+
+      .progresso.ativa .progresso-barra {
+        animation: listras-anim 2s linear infinite;
+      }
+      .progresso {
+        overflow: hidden;
+        height: 15px;
+        background-color: #e7e7e7;
+        padding: 1px;
+        box-shadow: inset -1px -1px 18px #cecece, inset 0 -1px 0 #cecece;
+      }
+      .progresso-barra {
+        width: 100%;
+        height: 15px;
+        background-color: #428bca;
+        -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+        -webkit-transition: width 0.6s ease;
+        transition: width 0.6s ease;
+      }
+      .progresso-pai .progresso-barra {
+        background-image: -webkit-gradient(
+          linear,
+          0 100%,
+          100% 0,
+          color-stop(0.25, rgba(255, 255, 255, 0.15)),
+          color-stop(0.25, transparent),
+          color-stop(0.5, transparent),
+          color-stop(0.5, rgba(255, 255, 255, 0.15)),
+          color-stop(0.75, rgba(255, 255, 255, 0.15)),
+          color-stop(0.75, transparent),
+          to(transparent)
+        );
+        background-image: -webkit-linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.15) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.15) 50%,
+          rgba(255, 255, 255, 0.15) 75%,
+          transparent 75%,
+          transparent
+        );
+        background-image: -moz-linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.15) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.15) 50%,
+          rgba(255, 255, 255, 0.15) 75%,
+          transparent 75%,
+          transparent
+        );
+        background-image: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.15) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.15) 50%,
+          rgba(255, 255, 255, 0.15) 75%,
+          transparent 75%,
+          transparent
+        );
+        background-size: 40px 40px;
+      }
+      .progresso-pai .progresso-barra,
+      .progresso-pai .progresso-barra-75 {
+        background-image: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.15) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.15) 50%,
+          rgba(255, 255, 255, 0.15) 75%,
+          transparent 75%,
+          transparent
+        );
+        background-size: 40px 40px;
+      }
+      .progresso.ativa .progresso-barra,
+      .progresso.ativa .progresso-barra-75 {
+        animation: listras-anim 2s linear infinite;
+      }
+      .progresso-barra-75 {
+        width: 75%;
+        height: 15px;
+        background-color: #093;
+        -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+        -webkit-transition: width 0.6s ease;
+        transition: width 0.6s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progresso progresso-pai">
+      <div class="progresso-barra-75"></div>
+    </div>
+
+    <div class="progresso progresso-pai ativa">
+      <div class="progresso-barra-75"></div>
+    </div>
+  </body>
+</html>

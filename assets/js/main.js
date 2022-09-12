@@ -1,27 +1,27 @@
-//Anima Background
-const conteudo = document.querySelector(".conteudo-anima");
-function AnimaBg(tag) {
-  for (let i = 0; i <= 50; i++) {
-    const blocks = document.createElement("div");
-    blocks.classList.add("block");
-    tag.appendChild(blocks);
-  }
-}
-AnimaBg(conteudo);
-function animateBlocks() {
-  anime({
-    targets: ".block",
-    translateX: () => anime.random(-700, 700),
-    translateY: () => anime.random(-700, 700),
-    scale: () => anime.random(1, 5),
+// //Anima Background
+// const conteudo = document.querySelector(".conteudo-anima");
+// function AnimaBg(tag) {
+//   for (let i = 0; i <= 50; i++) {
+//     const blocks = document.createElement("div");
+//     blocks.classList.add("block");
+//     tag.appendChild(blocks);
+//   }
+// }
+// AnimaBg(conteudo);
+// function animateBlocks() {
+//   anime({
+//     targets: ".block",
+//     translateX: () => anime.random(-700, 700),
+//     translateY: () => anime.random(-700, 700),
+//     scale: () => anime.random(1, 5),
 
-    easing: "linear",
-    duration: 4000,
-    //delay: anime.stagger(1000)
-  });
-}
-animateBlocks();
-setInterval(animateBlocks, 7000);
+//     easing: "linear",
+//     duration: 4000,
+//     //delay: anime.stagger(1000)
+//   });
+// }
+// animateBlocks();
+// setInterval(animateBlocks, 7000);
 
 //Efeito Maquina de Escrver
 const texto = document.querySelector("p");
@@ -34,7 +34,7 @@ function maquinaDeEscrever(texto) {
 }
 maquinaDeEscrever(texto);
 
-//Paj=gination
+//Pagination
 function openTab(evt, idName) {
   var i, tabcontent, tablinks;
   tabcontent = document.querySelectorAll("section");
@@ -83,6 +83,9 @@ createBars('javascript','88%')
 
 
 const tabSkills = document.querySelectorAll(".tab-skill-percent");
+
+
+
 button[1].addEventListener("click", () => {
   for (const i of tabSkills) {
     i.style.width = 0;
